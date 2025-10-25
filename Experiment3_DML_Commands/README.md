@@ -47,10 +47,26 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to identify the top 3 most expensive discounted products. Return product_id, original_price, discount_percentage, and discounted_price.
+
+Sample table: Products
+
+product_id | original_price | discount_percentage
+
+ ------------+----------------+--------------------- 
+
+101 | 50.00 | 0.10 
+
+102 | 150.00 | 0.15 
+
+103 | 200.00 | 0.20 
+
+104 | 300.00 | 0.25
 
 ```sql
--- Paste your SQL code below for Question 1
+<img width="543" height="168" alt="image" src="https://github.com/user-attachments/assets/56e5d97b-01d4-480d-87f5-f6a8f253bd52" />
+
+-- 
 ```
 
 **Output:**
