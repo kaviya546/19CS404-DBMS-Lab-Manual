@@ -38,123 +38,190 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+<img width="789" height="419" alt="image" src="https://github.com/user-attachments/assets/847d1fcd-bd96-497c-8b95-d9dc8060fa54" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT SUM(inventory) AS total_available_amount
+FROM fruits
+WHERE price > 0.5;
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="576" height="237" alt="image" src="https://github.com/user-attachments/assets/9517a4a5-2d0e-4e12-a8ff-844458848fc5" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="596" height="381" alt="image" src="https://github.com/user-attachments/assets/97ffb2f6-d5a7-42f2-a856-b0d5b83726da" />
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT AVG(LENGTH(email)) AS avg_email_length
+FROM customer;
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="420" height="247" alt="image" src="https://github.com/user-attachments/assets/5e0fa412-1192-4d7d-be2c-6a0f37a164b3" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="738" height="402" alt="image" src="https://github.com/user-attachments/assets/f9261805-3f1b-45b5-8646-fcc4583bc754" />
+
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT COUNT(*) AS COUNT
+FROM customer
+WHERE city = 'Noida';
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="346" height="239" alt="image" src="https://github.com/user-attachments/assets/caa3c97a-c0de-40be-938e-f4d40d9c86fc" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="787" height="379" alt="image" src="https://github.com/user-attachments/assets/75bb7f9d-6340-4cb3-b8b5-2acac488d0fe" />
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT 
+    DATE_FORMAT(Date, '%Y-%m') AS Month,
+    COUNT(*) AS TotalRecords
+FROM MedicalRecords
+GROUP BY DATE_FORMAT(Date, '%Y-%m')
+ORDER BY Month;
+
 ```
 
-**Output:**
 
-![Output4](output.png)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="810" height="353" alt="image" src="https://github.com/user-attachments/assets/f7903295-e97f-4846-b874-718491ebc753" />
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT gender AS Gender, COUNT(*) AS TotalPatients
+FROM Patients
+GROUP BY gender;
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="509" height="276" alt="image" src="https://github.com/user-attachments/assets/20dc3c5e-23e9-4602-ba8e-c318a2b3ffa2" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="775" height="392" alt="image" src="https://github.com/user-attachments/assets/9a350ffc-5679-4b5e-b2e7-432d54dc26cb" />
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT 
+    CASE
+        WHEN (CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', DateOfBirth) AS INTEGER))
+             - (strftime('%m-%d', 'now') < strftime('%m-%d', DateOfBirth)) < 20 THEN 'Under 20'
+        WHEN (CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', DateOfBirth) AS INTEGER))
+             - (strftime('%m-%d', 'now') < strftime('%m-%d', DateOfBirth)) BETWEEN 20 AND 30 THEN '20-30'
+        WHEN (CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', DateOfBirth) AS INTEGER))
+             - (strftime('%m-%d', 'now') < strftime('%m-%d', DateOfBirth)) BETWEEN 31 AND 40 THEN '31-40'
+        WHEN (CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', DateOfBirth) AS INTEGER))
+             - (strftime('%m-%d', 'now') < strftime('%m-%d', DateOfBirth)) BETWEEN 41 AND 50 THEN '41-50'
+        ELSE 'Above 50'
+    END AS AgeGroup,
+    COUNT(*) AS TotalPatients
+FROM Patients
+GROUP BY AgeGroup
+ORDER BY MIN((CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', DateOfBirth) AS INTEGER))
+             - (strftime('%m-%d', 'now') < strftime('%m-%d', DateOfBirth)));
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="544" height="359" alt="image" src="https://github.com/user-attachments/assets/8c065d71-0011-47f8-817f-2354fbb839e0" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="1264" height="386" alt="image" src="https://github.com/user-attachments/assets/5d1f9dad-57af-4b80-8ecd-f32299eacef8" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT age, MAX(income) AS "MAX(income)"
+FROM employee
+GROUP BY age
+HAVING MAX(income) > 2000000;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="512" height="285" alt="image" src="https://github.com/user-attachments/assets/a9de7258-cb46-4440-ae43-802164ff7bd3" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="1255" height="430" alt="image" src="https://github.com/user-attachments/assets/0cc2a425-7682-4175-9d14-f750aac8e18d" />
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT occupation, MIN(workhour) AS "MIN(workhour)"
+FROM employee1
+GROUP BY occupation
+HAVING MIN(workhour) > 8;
+
 ```
 
 **Output:**
+<img width="620" height="386" alt="image" src="https://github.com/user-attachments/assets/653b3473-3b9a-4cbf-bd1b-e9ad61d7f7b0" />
 
-![Output8](output.png)
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="1279" height="371" alt="image" src="https://github.com/user-attachments/assets/c8c27c52-ba70-401f-bc36-4f27f5292db8" />
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT jdate, AVG(workhour) AS "AVG(workhour)"
+FROM employee1
+GROUP BY jdate
+HAVING AVG(workhour) < 10;
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="551" height="257" alt="image" src="https://github.com/user-attachments/assets/496549de-4764-4ec5-b25e-b94d741ecbe1" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="1251" height="370" alt="image" src="https://github.com/user-attachments/assets/c465f96f-7f98-47f3-ace4-3dac9b79e388" />
+
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT (age/5)*5 AS age_group, MIN(age) 
+FROM customer1
+GROUP BY (age/5)*5
+HAVING MIN(age) < 25;
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="582" height="233" alt="image" src="https://github.com/user-attachments/assets/754bb967-be59-4acb-a81c-79d5fa7c4e84" />
+
 
 
 ## RESULT
