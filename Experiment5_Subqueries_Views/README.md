@@ -162,6 +162,7 @@ WHERE s.city = 'New York';
 ---
 Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is EQUAL TO $1500.
 
+
 Sample table: CUSTOMERS
 
 ID          NAME        AGE         ADDRESS     SALARY
